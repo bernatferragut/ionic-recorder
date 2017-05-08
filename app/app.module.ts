@@ -7,6 +7,7 @@ import { MediaPlugin } from '@ionic-native/media';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { Recorder } from './../providers/recorder';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomePage } from '../pages/home/home';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MediaPlugin
+    MediaPlugin,
+    Recorder
   ]
 })
 export class AppModule {}

@@ -7,8 +7,11 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button block (click)="onStartRecord()">START RECORD</button>
-  <button ion-button block (click)="onStopRecord()">STOP RECORD</button>
-  <button ion-button block (click)="onPlay()">PLAY</button>
-  <button ion-button block (click)="onStop()">STOP</button>
+  <button ion-button block (click)="startRecording()" color="secondary">  START RECORD </button>
+  <button ion-button block (click)="stopRecording()"  color="danger">     STOP RECORD  </button>
+  <button ion-button block (click)="play()"           color="secondary">  PLAY         </button>
+  <button ion-button block (click)="pause()"          color="dark">       PAUSE        </button>
+  <button ion-button block (click)="stop()"           color="danger">     STOP         </button>
 </ion-content>
+
+
