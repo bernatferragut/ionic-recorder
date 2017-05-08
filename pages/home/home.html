@@ -1,14 +1,14 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Voice Recorder
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <button ion-button block (click)="onStartRecord()">START RECORD</button>
+  <button ion-button block (click)="onStopRecord()">STOP RECORD</button>
+  <button ion-button block (click)="onPlay()">PLAY</button>
+  <button ion-button block (click)="onStop()">STOP</button>
 </ion-content>
