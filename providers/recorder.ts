@@ -4,29 +4,16 @@ import { MediaPlugin, MediaObject } from '@ionic-native/media'; // Recording Plu
 @Injectable()
 export class Recorder {
 
-  media: MediaObject = null;
+  media: MediaObject;
   mediaList: MediaObject[]= [];
 // =====
-  constructor( private mediaplugin: MediaPlugin, private mediaObject: MediaObject) { 
-    this.media = this.getMediaObject();
-    this.mediaList = this.getMediaList();
+  constructor( private mediaplugin: MediaPlugin) { 
+    const onStatusUpdate = (status) => console.log(status);       //Param1
+    const onSuccess = () => console.log('Action is successful.'); //Param2
+    const onError = (error) => console.error(error.message);      //Param3
+    this.media = this.mediaplugin.create('record.mp3', onStatusUpdate, onSuccess, onError); //mediaObject
    }
 
-  getMediaObject(): MediaObject{
-    if (this.media === null){
-      const onStatusUpdate = (status) => console.log(status);
-      const onSuccess = () => console.log('Action is successful.');
-      const onError = (error) => console.error(error.message);
-
-      this.media = this.mediaplugin.create('../../assets/recordings/record.mp3', onStatusUpdate, onSuccess, onError);
-    }
-    return this.media;
-  }
-
-  getMediaList(){
-    return this.mediaList;
-  }
-// =====
   onStartRecord(){
       this.mediaList !== null ? this.mediaList[0].release() : []; // if the list is not empty we empty it and release audio
       this.media.startRecord(); 
@@ -42,7 +29,7 @@ export class Recorder {
   }
 
   onPause(){
-    this.media.pause();
+    this.mediaList[0].pause();
   }
 
   onStop(){
