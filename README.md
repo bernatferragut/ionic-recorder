@@ -10,6 +10,5 @@ This is an App made with Ionic2 and Cordova Native plugins.
 
 # Results for now
 
-![general](https://cloud.githubusercontent.com/assets/17754060/25857628/0a138fc6-34b0-11e7-8e27-6972043eee8b.jpg)
-
+![general](https://cloud.githubusercontent.com/assets/17754060/25857976/fc0d3066-34b0-11e7-8fe7-3b845638e1fb.jpg)
 
