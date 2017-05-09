@@ -8,6 +8,7 @@ import { MediaPlugin } from '@ionic-native/media';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Recorder } from './../providers/recorder';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { Recorder } from './../providers/recorder';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
