@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Recorder } from './../../providers/recorder'; // we import the Recorder Service
+import { MediaObject } from '@ionic-native/media';
 
 @Component({
   selector: 'page-home',
@@ -8,8 +9,11 @@ import { Recorder } from './../../providers/recorder'; // we import the Recorder
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, 
-              public recorder: Recorder) { } // we inject the Recorder Service
+  recMediaList: MediaObject[];
+
+  constructor(public navCtrl: NavController, public recorder: Recorder) { // we inject the Recorder Service
+    this.recMediaList = this.recorder.mediaList;
+   } 
    
    startRecording(){
      this.recorder.onStartRecord();
@@ -17,6 +21,7 @@ export class HomePage {
 
    stopRecording(){
      this.recorder.onStopRecord();
+     this.recMediaList = this.recorder.mediaList;
    }
 
    play(){
@@ -29,5 +34,4 @@ export class HomePage {
    stop(){
      this.recorder.onStop();
    }
-
 }

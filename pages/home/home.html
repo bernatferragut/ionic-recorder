@@ -7,11 +7,26 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button block (click)="startRecording()" color="secondary">  START RECORD </button>
-  <button ion-button block (click)="stopRecording()"  color="danger">     STOP RECORD  </button>
-  <button ion-button block (click)="play()"           color="secondary">  PLAY         </button>
-  <button ion-button block (click)="pause()"          color="dark">       PAUSE        </button>
-  <button ion-button block (click)="stop()"           color="danger">     STOP         </button>
+
+  <ion-card>
+    <ion-card-content>
+      <button ion-button block (click)="startRecording()" color="secondary">  START RECORD </button>
+      <button ion-button block (click)="stopRecording()" color="danger">     STOP RECORD  </button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <button ion-button icon-only block color="dark" (click)="play()">
+       <ion-icon name="play"></ion-icon>
+      </button>
+      <button ion-button icon-only block color="dark" (click)="pause()">
+       <ion-icon name="pause"></ion-icon>
+      </button>
+      <button ion-button icon-only block color="dark" (click)="stop()">
+        <ion-icon name="square"></ion-icon>
+      </button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
-
-
