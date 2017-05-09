@@ -13,9 +13,8 @@ export class Recorder {
     const onSuccess = () => console.log('Action is successful.'); //Param2
     const onError = (error) => console.error(error.message);      //Param3
     this.media = this.mediaplugin.create('record.mp3', onStatusUpdate, onSuccess, onError); //mediaObject
-    storage.ready().then(() => {
-      console.log('Storage is Ready to use');
-    });
+
+    storage.ready().then(() => { console.log('Storage is Ready to use'); }); // Storage ready to use
    }
 
   onStartRecord(){
